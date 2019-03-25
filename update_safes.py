@@ -17,10 +17,14 @@ def main():
 
     num_safes = len(safes)
     
-    # Fetch Safe addresses from https://etherscan.io/find-similiar-contracts?a=<address>
+    # Fetch Safe addresses from https://etherscan.io/find-similar-contracts?a=<address>
     session = HTMLSession()
-    response = session.get('https://etherscan.io/find-similiar-contracts?a={}'.format(SAFE_CONTRACT))
+    url = 'https://etherscan.io/find-similar-contracts?a={}'.format(SAFE_CONTRACT)
+    response = session.get(url)
 
+    if not response.ok or 'unexpected error' in response.text:
+        print('Error loading Safe addresses from Etherscan. Does this link work?\n{}'.format(url))
+    
     # Get the Safes addresses #hacky
     for td in response.html.find('td'):
         text = td.text
