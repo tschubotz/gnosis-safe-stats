@@ -5,8 +5,8 @@ from gnosis.eth.contracts import get_safe_contract, get_erc20_contract
 from multiprocessing import Pool
 import json
 
-NUM_PROCESSES = 64
 INFURA_API_KEY = ''
+NUM_PROCESSES = 128
 
 
 def get_info_for_address(param, web3=None):
@@ -17,8 +17,12 @@ def get_info_for_address(param, web3=None):
         web3 = Web3(HTTPProvider('https://mainnet.infura.io/v3/' + INFURA_API_KEY))
 
     contract = get_safe_contract(w3=web3, address=address)
-
+    
     output = [address]
+
+    # Check if the contract exists
+    if (web3.eth.getCode(address) == 0 or web3.eth.getCode(address).hex() in ('0x00', '0x', '0x0')):
+        return
 
     # Get nonce
     nonce = contract.functions.nonce().call()
@@ -55,7 +59,7 @@ def get_info_for_address(param, web3=None):
 def main():
     web3 = Web3(HTTPProvider('https://mainnet.infura.io/v3/' + INFURA_API_KEY))
 
-    # Get Safe addressses form safe.csv
+    # Get Safe addresses form safe.csv
     safe_addresses = []
     with open('safes.csv', 'r') as f:
         reader = csv.reader(f, delimiter=',')
@@ -84,7 +88,7 @@ def main():
         param = {'safe_address': address, 'tokens': tokens}
         params.append(param)
 
-    get_info_for_address(params[0])
+    # get_info_for_address(params[0])
     
     # Do the work
     with Pool(processes=NUM_PROCESSES) as pool:
