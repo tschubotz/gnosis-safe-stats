@@ -1,98 +1,121 @@
-from web3.exceptions import BadFunctionCallOutput
-from web3 import Web3, HTTPProvider
-import csv
-from gnosis.eth.contracts import get_safe_contract, get_erc20_contract
-from multiprocessing import Pool
+from web3 import Web3
 import json
+import requests
+import os
+from dateutil import parser as date_parser
 
-INFURA_API_KEY = ''
-NUM_PROCESSES = 128
 
-
-def get_info_for_address(param, web3=None):
-    address = param['safe_address']
-    tokens = param['tokens']
-    
-    if not web3:
-        web3 = Web3(HTTPProvider('https://mainnet.infura.io/v3/' + INFURA_API_KEY))
-
-    contract = get_safe_contract(w3=web3, address=address)
-    
-    output = [address]
-
-    # Check if the contract exists
-    if (web3.eth.getCode(address) == 0 or web3.eth.getCode(address).hex() in ('0x00', '0x', '0x0')):
-        return
-
-    # Get nonce
-    nonce = contract.functions.nonce().call()
-    output.append(nonce)
-
-    # Get number of owners
-    owners = contract.functions.getOwners().call()
-    output.append(len(owners))
-
-    # Get threshold
-    threshold = contract.functions.getThreshold().call()
-    output.append(threshold)
-
-    # Get ETH balance
-    eth_balance = Web3.fromWei(web3.eth.getBalance(address), 'ether')
-    output.append(eth_balance)
-
-    # Get token balance for all tokens
-    for token_address in sorted(tokens):
-        token = tokens[token_address]
-        
-        contract = get_erc20_contract(w3=web3, address=token_address)
-        try:
-            balance = contract.functions.balanceOf(address).call() / (10**token['decimals'])
-        except BadFunctionCallOutput:
-            balance = 0
-        output.append(balance)
-    
-    # Print result
-    print(','.join(map(str, output)))
-    
-
+SAFE_RELAY_USERNAME = ''
+SAFE_RELAY_PASSWORD = ''
+STATS_FILENAME = 'stats.csv'
 
 def main():
-    web3 = Web3(HTTPProvider('https://mainnet.infura.io/v3/' + INFURA_API_KEY))
+    if os.path.exists(STATS_FILENAME):
+        print('{} exists. Please delete or choose different filename.'.format(STATS_FILENAME))
+        exit(0)
 
-    # Get Safe addresses form safe.csv
-    safe_addresses = []
-    with open('safes.csv', 'r') as f:
-        reader = csv.reader(f, delimiter=',')
-        for line in reader:
-            address = line[0]
-            safe_addresses.append(web3.toChecksumAddress(address))
+    # STEP 1: Get Safes from backend
+    print('STEP 1: Get Safes from backend')
 
-    # Get tokens from tokens.csv
+    # Auth
+    auth_data = {
+        'username': SAFE_RELAY_USERNAME, 
+        'password': SAFE_RELAY_PASSWORD
+        }
+    auth_headers = {
+        'Content-Type': 'application/json'
+        }
+    auth_request = requests.post("https://safe-relay.gnosis.pm/api/v1/private/api-token-auth/", headers=auth_headers, data=json.dumps(auth_data))
+    auth_token = auth_request.json().get('token')
+
+    get_safes_headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Token {}'.format(auth_token)
+        }
+
+    safes = []
+    get_safes_next = 'https://safe-relay.gnosis.pm/api/v1/private/safes/?limit=100'
+    while get_safes_next:
+        get_safes_request = requests.get(get_safes_next, headers=get_safes_headers)
+        get_safes_json = get_safes_request.json()
+        print('\tGot batch of {} safes from backend'.format(len(get_safes_json.get('results'))))
+        
+        for get_safe in get_safes_json.get('results'):
+            safe = get_safe.copy()
+            safe['address'] = Web3.toChecksumAddress(safe['address'])
+            safe['tokensWithBalance'] = {}
+            for token in get_safe['tokensWithBalance']:
+                safe['tokensWithBalance'][token['tokenAddress']] = token
+            safes.append(safe)
+
+        get_safes_next = get_safes_json.get('next')
+        
+    print('Got {} safes in total'.format(len(safes)))
+
+    # STEP 2: Get tokens from backend
+    print('STEP 2: Get tokens from backend')
     tokens = {}
-    with open('tokens.csv', 'r') as f:
-        for line in f.readlines():
-            token = json.loads(line)
-            tokens[token['address']] = token
+    get_tokens_next = 'https://safe-relay.gnosis.pm/api/v1/tokens/?limit=100'
+    while get_tokens_next:
+        get_tokens_request = requests.get(get_tokens_next)
+        get_tokens_json = get_tokens_request.json()
+        
+        print('\tGot batch of {} tokens from backend'.format(len(get_tokens_json.get('results'))))
+        get_tokens_next = get_tokens_json.get('next')
+
+        for new_token in get_tokens_json['results']:
+            tokens[new_token['address']] = new_token
+
+    print('Got {} tokens in total'.format(len(tokens)))  
 
     # Get token symbols for header row
-    column_names = ['safe_address', 'nonce', 'num_owners', 'threshold', 'ETH']
+    column_names = ['safe_address', 'created_at', 'version', 'nonce', 'num_owners', 'threshold', 'ETH']
     for token_address in sorted(tokens):
         column_names.append(tokens[token_address]['symbol'])
 
-    # Print header row
-    print(','.join(column_names))
+    stats_file = open(STATS_FILENAME, 'w')
+    stats_file.write(','.join(column_names))
+    stats_file.write('\n')
     
-    # Prepare params
-    params = []
-    for address in safe_addresses:
-        param = {'safe_address': address, 'tokens': tokens}
-        params.append(param)
+    # STEP 3: Go through safes, get details and write to output file
+    print('STEP 3: Go through safes, get details and write to output file')
+    for i,safe in enumerate(safes):
+        print('\tGet info for Safe {}/{}'.format(i + 1, len(safes)))
 
-    # get_info_for_address(params[0])
-    
-    # Do the work
-    with Pool(processes=NUM_PROCESSES) as pool:
-        pool.map(get_info_for_address, params)
+        get_safe_info_request = requests.get('https://safe-relay.gnosis.pm/api/v1/safes/{}'.format(safe['address']))
+        get_safe_info_json = get_safe_info_request.json()
+        
+        owners = get_safe_info_json.get('owners')
+        num_owners = len(owners) if owners else 0
+
+        creation_datetime = date_parser.parse(safe['created'])
+
+        eth_balance = safe['balance'] if safe['balance'] else 0
+
+        out = [
+            safe['address'],
+            str(creation_datetime.date()),
+            get_safe_info_json.get('version'),
+            get_safe_info_json.get('nonce'),
+            num_owners,
+            get_safe_info_json.get('threshold'),
+            eth_balance / 10**18,
+        ]
+
+        for token in sorted(tokens):
+            if token in safe['tokensWithBalance']:
+                decimals = tokens[token]['decimals']
+                balance = safe['tokensWithBalance'][token]['balance']
+                out.append(balance / 10 ** decimals)
+            else:
+                out.append(0)
+        
+        stats_file.write(','.join(map(str, out)))
+        stats_file.write('\n')
+        stats_file.flush()
+
+        
+    stats_file.close()
 
 if __name__ == '__main__':
     main()
