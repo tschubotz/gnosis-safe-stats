@@ -69,7 +69,7 @@ def main():
     print('Got {} tokens in total'.format(len(tokens)))  
 
     # Get token symbols for header row
-    column_names = ['safe_address', 'created_at', 'version', 'nonce', 'num_owners', 'threshold', 'ETH']
+    column_names = ['safe_address', 'created_at', 'version', 'nonce', 'num_owners', 'owners', 'threshold', 'ETH']
     for token_address in sorted(tokens):
         column_names.append(tokens[token_address]['symbol'])
 
@@ -98,6 +98,7 @@ def main():
             get_safe_info_json.get('version'),
             get_safe_info_json.get('nonce'),
             num_owners,
+            ';'.join(owners),
             get_safe_info_json.get('threshold'),
             eth_balance / 10**18,
         ]
