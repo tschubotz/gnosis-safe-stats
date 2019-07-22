@@ -89,8 +89,8 @@ def main():
         num_owners = len(owners) if owners else 0
 
         creation_datetime = date_parser.parse(safe['created'])
-
-        eth_balance = safe['balance'] if safe['balance'] else 0
+        
+        eth_balance = safe.get('balance', 0)
 
         out = [
             safe['address'],
