@@ -90,7 +90,9 @@ def main():
 
         creation_datetime = date_parser.parse(safe['created'])
         
-        eth_balance = safe.get('balance', 0)
+        eth_balance = 0
+        if None in safe['tokensWithBalance']:
+            eth_balance = safe['tokensWithBalance'][None]['balance']
 
         out = [
             safe['address'],

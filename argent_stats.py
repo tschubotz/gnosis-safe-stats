@@ -36,6 +36,7 @@ def get_info_for_address(param, web3=None):
     eth_balance = Web3.fromWei(web3.eth.getBalance(address), 'ether')
     output.append(eth_balance)
 
+
     # Get token balance for all tokens
     for token_address in sorted(tokens):
         token = tokens[token_address]
@@ -73,7 +74,7 @@ def main():
     tokens = {}
     token_response = requests.get('https://safe-relay.gnosis.pm/api/v1/tokens/?limit=200')
     for token in token_response.json().get('results'):
-        if token['symbol'] in ['GNO', 'WETH', 'DAI', 'OWL', 'OMG', 'ENJ', 'cDAI', 'ZRX', 'SNT', 'BAT']:
+        if token['symbol'] in ['GNO', 'WETH', 'DAI', 'OWL', 'OMG', 'ENJ', 'cDAI', 'ZRX', 'SNT', 'BAT', 'cETH', 'cBAT', 'cUSD', 'cWBTC', 'cREP', 'cZRX', 'PETH']:
             tokens[token['address']] = token
 
     # Get token symbols for header row
@@ -90,8 +91,8 @@ def main():
         param = {'safe_address': address, 'tokens': tokens}
         params.append(param)
 
-    # get_info_for_address(params[0])
-    
+    # get_info_for_address(params[1])
+
     # Do the work
     with Pool(processes=NUM_PROCESSES) as pool:
         pool.map(get_info_for_address, params)
