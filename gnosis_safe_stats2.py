@@ -39,14 +39,14 @@ TOKENS_TO_IGNORE = [
     '0x4c1C4957D22D8F373aeD54d0853b090666F6F9De',
     '0x552d72f86f04098a4eaeDA6D7b665AC12f846AD2',
     '0x6ff313FB38d53d7A458860b1bf7512f54a03e968',
-    '0x06e0feB0D74106c7adA8497754074D222Ec6BCDf',  # BitBall, price >0 
+    '0x06e0feB0D74106c7adA8497754074D222Ec6BCDf',  # BitBall, price >0
     '0x05f02507c7134Dbae420AB8C0Ef56E999B59dA03',
-    '0x11166C00AA9096E9B19A5C218DB86305Fe898b9C',  
+    '0x11166C00AA9096E9B19A5C218DB86305Fe898b9C',
     '0x0b22aB9d1D544463694Bd31EFb85166b5577fc23',
     '0x53Ad8c733a4338e2B8C235ECfDbed0Ef8f79C7Bd',
     '0x2F6CB07D35571Ca1Ba4fbEbC5a4EC68808Ff44e6',
     '0xD9A12Cde03a86E800496469858De8581D3A5353d',
-    '0x216Ab78397Be269016BA6b95e746E5EcE536fA4a', 
+    '0x216Ab78397Be269016BA6b95e746E5EcE536fA4a',
     '0x466850472840C252c75B9077495587Ca97394e13',
     '0xad5BBB92E00A8DCE476555Fbb7FD54Bd287De2b3',  #ERC721
     '0x22C1f6050E56d2876009903609a2cC3fEf83B415',  #ERC721
@@ -57,17 +57,53 @@ TOKENS_TO_IGNORE = [
     '0x2aEa4Add166EBf38b63d09a75dE1a7b94Aa24163',  #Kudos, ERC721
     '0x2F4Bdafb22bd92AA7b7552d270376dE8eDccbc1E',  #ERC721
     '0xD39fEa299BCc8a359D56FD9d148C4bcE89cb83b9',
-    '0x1C3BB10dE15C31D5DBE48fbB7B87735d1B7d8c32',  
+    '0x1C3BB10dE15C31D5DBE48fbB7B87735d1B7d8c32',
     '0x194C66AFbE810600A33d80Ae276Bcd2556063b37',
-    '0x97deC872013f6B5fB443861090ad931542878126', 
+    '0x97deC872013f6B5fB443861090ad931542878126',
     '0x6558Ebe73d92c4BF58195055A5eccA7aB7Aa4dc9',
     '0xE5f7ef61443Fc36AE040650aa585B0395AEf77c8',
-    '0xb3f11B7F046E253756106Dc4380c096d39B93eA4', 
+    '0xb3f11B7F046E253756106Dc4380c096d39B93eA4',
     '0xBDDab785b306BCD9fB056Da189615Cc8eCE1D823',  #EBK
     '0x423D8321be3DD7EbFF5B6c7da2EF6614B8547acf',
+    '0x2C4Bd064b998838076fa341A83d007FC2FA50957',
+    '0x22C8ECF727C23422f47093b562EC53c139805301',
+    '0x09cabEC1eAd1c0Ba254B09efb3EE13841712bE14',
+    '0x04ad70466A79Dd1251F22Ad426248088724ff32B',
+    '0x322f4f6a48329690957a3BCBd1301516C2B83c1F',
+    '0xBa7A6156ff985a119B5a0B35B20ABeF5300A55E9',
+    '0xAD1Cd0a72676dbb08848f5d4119a5F4B2e91E82E',
+    '0xDa63A8F9b33e3C927E8ce66606913bE1821f67de',
+    '0xe71cEbd38cE2186E01eb6c8a232eC16E8906Ed69',
+    '0x158ec87a6ED3Ea0bc35226ccc6bF9fe8063162C3',
+    '0x3A9FfF453d50D4Ac52A6890647b823379ba36B9E',
+    '0x5daf655C14f366003Bef5172300c1deB61C4Ed6d',
+    '0xC12D1c73eE7DC3615BA4e37E4ABFdbDDFA38907E', #KickToken
+    '0xC011A72400E58ecD99Ee497CF89E3775d4bd732F', # STX
+    '0x9c5c3395B9B791d2Edd472592045fB341E115c3b',
+    '0x8619C9194bF7212BcAb69B8D58Ad6AB872dECd5c',
+    '0xAbf14EAc02407842a0140AD012239a03F8985404',
+    '0xB7FbE91752Dd926a5EA103f1b2E8b6FD2cEe4d91',
+    '0x617b3f8050a0BD94b6b1da02B4384eE5B4DF13F4',
+    '0x43688910273f199B8AE2cA018c13918fb3D37B58',
+    '0x5De5E1A54Ad5E5f67A28661C9658F1b73a1AADA3',
+    '0xCF8335727B776d190f9D15a54E6B9B9348439eEE',
+    '0x2a1530C4C41db0B0b2bB646CB5Eb1A67b7158667', # uniswap v1
+    '0x2fC9F52240F68eF0f178e1B896435D8f64A8DFaa',
+    '0xA6d954d08877f8ce1224f6BFb83484c7D3aBF8E9', #ethmoji, erc721
+    '0xb3f67dE9a919476a4c0fE821d67bf5C4637D8429',
+    '0x216f1C5cF07bEEAe53c1c3588cc5D8E94BF181E2',
 
-    
 
+    '0x4140919DE11fCe58E654cC6038017Af97f810De1', #sMKR
+    '0x737F98AC8cA59f2C68aD658E3C3d8C8963E40a4c', #AMON
+    '0xaAAf91D9b90dF800Df4F55c205fd6989c977E73a', # TokenCard
+    '0x952BBd5344CA0A898a1b8b2fFcfE3acb1351ebd5', # Kairo
+    '0xfE18be6b3Bd88A2D2A7f928d00292E7a9963CfC6',  #sBTC
+    '0xaeC2E87E0A235266D9C5ADc9DEb4b2E29b54D009', #sngls
+    '0x107c4504cd79C5d2696Ea0030a8dD4e92601B82e', #bloom
+    '0x8a854288a5976036A725879164Ca3e91d30c6A1B', #GET
+    '0xec67005c4E498Ec7f55E092bd1d35cbC47C91892', #MLN
+    '0x2e91E3e54C5788e9FdD6A181497FDcEa1De1bcc1', #Hercules
 ]
 
 FORMER_PAYMENT_TOKENS = [
@@ -91,7 +127,7 @@ class Stats(object):
     def addDefaultStatsValue(self, stats_key, value):
         if not stats_key in self._stats_keys:
             self.addStatsKey(stats_key)
-            
+
         self._default_stats_values[stats_key] = value
 
     def getDefaultStatsValue(self, stats_key):
@@ -132,10 +168,10 @@ class TokenInfo(object):
             self._tokens[token['address']] = token
             if token['gas'] or token['address'] in FORMER_PAYMENT_TOKENS:
                 self._payment_tokens[token['address']] = token
-    
+
     def knows(self, address):
         knows = address in self._tokens.keys()
-        if not knows and address not in TOKENS_TO_IGNORE: 
+        if not knows and address not in TOKENS_TO_IGNORE:
             print('Could not find info for token at https://etherscan.io/token/{}'.format(address))
         return knows
 
@@ -162,7 +198,7 @@ class TokenInfo(object):
     def getDecimalsForAddress(self, address):
         return self._tokens[address]['decimals']
 
-    
+
 
 def main():
     if os.path.exists(STATS_FILENAME):
@@ -171,13 +207,13 @@ def main():
 
     start_date = datetime.date(2018, 1, 1)
     end_date = datetime.date.today()
- 
+
     stats = Stats(start_date, end_date)
     token_info = TokenInfo()
 
     # Get history stats
     response = requests.get('https://safe-relay.gnosis.pm/api/v1/stats/history/?fromDate={}'.format(start_date))
-    
+
 
     # Safe deployments
     safe_deployments = response.json().get('safesCreated').get('deployed')
@@ -193,7 +229,7 @@ def main():
 
     # PaymentTokens for deployment
     payment_token_num_deployment_txs = response.json().get('safesCreated').get('paymentTokens')
-    
+
     stats.addStatsKey('payment_eth_creation')
     for symbol in token_info.allPaymentTokenSymbols():
         stats.addStatsKey('payment_{}_creation'.format(symbol))
@@ -219,7 +255,7 @@ def main():
     funds_stored_tokens = response.json().get('safesCreated').get('fundsStored').get('tokens')
     for symbol in token_info.allTokenSymbols():
         stats.addStatsKey('{}_stored'.format(symbol))
-    
+
     for item in funds_stored_tokens:
         token_address = item['tokenAddress']
         if not token_info.knows(token_address):
@@ -249,7 +285,7 @@ def main():
     token_volumes = response.json().get('relayedTxs').get('volume').get('tokens')
     for symbol in token_info.allTokenSymbols():
         stats.addStatsKey('volume_{}'.format(symbol))
-    
+
     for item in token_volumes:
         token_address = item['tokenAddress']
         if not token_info.knows(token_address):
@@ -260,7 +296,7 @@ def main():
 
     # Payment tokens
     payment_token_num_txs = response.json().get('relayedTxs').get('paymentTokens')
-    
+
     stats.addStatsKey('payment_eth_txs')
     for symbol in token_info.allPaymentTokenSymbols():
         stats.addStatsKey('payment_{}_txs'.format(symbol))
@@ -280,7 +316,7 @@ def main():
     columns = ['date']
     columns.extend(stats.getAllStatsKeys())
 
-    known_columns = ['date', 'safes_created', 'avg_safe_creation_time', 'payment_eth_creation', 'payment_OWL_creation', 'payment_DAI_creation', 'payment_WETH_creation', 'payment_KNC_creation', 'payment_MKR_creation', 'payment_RDN_creation', 'eth_stored', 'GNO_stored', 'OWL_stored', 'DAI_stored', 'MGN_stored', 'WETH_stored', '0xBTC_stored', 'ZRX_stored', 'ADX_stored', 'ADT_stored', 'AE_stored', 'AION_stored', 'AST_stored', 'ALIS_stored', 'AMB_stored', 'ANT_stored', 'APIS_stored', 'REP_stored', 'AOA_stored', 'BNT_stored', 'BAT_stored', 'BAX_stored', 'BCAP_stored', 'BZNT_stored', 'BHPC_stored', 'BSOV_stored', 'BCT_stored', 'BQX_stored', 'BIX_stored', 'BKN_stored', 'VEE_stored', 'BLZ_stored', 'BNB_stored', 'BOOTY_stored', 'BNTY_stored', 'BRD_stored', 'BRZC_stored', 'BCZERO_stored', 'BTM_stored', 'CAN_stored', 'CENNZ_stored', 'CHX_stored', 'CND_stored', 'CLC_stored', 'cZRX_stored', 'cREP_stored', 'cBAT_stored', 'cDAI_stored', 'cETH_stored', 'cUSDC_stored', 'cWBTC_stored', 'CTXC_stored', 'CS_stored', 'CREDO_stored', 'CRO_stored', 'CPT_stored', 'C20_stored', 'AUTO_stored', 'CVC_stored', 'CMT_stored', 'GEN_stored', 'DPP_stored', 'DATA_stored', 'XD_stored', 'DAY_stored', 'MANA_stored', 'DENT_stored', 'DCN_stored', 'DESH_stored', 'DGTX_stored', 'DGD_stored', 'DNT_stored', 'DMT_stored', 'DRGN_stored', 'EDG_stored', 'LEND_stored', 'EDO_stored', 'ELF_stored', 'EDR_stored', 'ENG_stored', 'ENJ_stored', 'ERC20_stored', 'XET_stored', 'ETHS_stored', 'NEC_stored', 'ETHPLO_stored', 'FOAM_stored', 'FUN_stored', 'FSN_stored', 'GUSD_stored', 'GNX_stored', 'GVT_stored', 'GTO_stored', 'GIM_stored', 'GNT_stored', 'GRID_stored', 'GSE_stored', 'HOT_stored', 'HPB_stored', 'HT_stored', 'HYPE_stored', 'ICN_stored', 'ICX_stored', 'IDEX_stored', 'RLC_stored', 'INS_stored', 'INB_stored', 'IOST_stored', 'IOTX_stored', 'JNT_stored', 'KIN_stored', 'KNC_stored', 'LINK (Chainlink)_stored', 'LKY_stored', 'LPT_stored', 'LOOM_stored', 'LRC_stored', 'LRC_stored', 'MFT_stored', 'MKR_stored', 'MAN_stored', 'MXM_stored', 'MCO_stored', 'MDA_stored', 'MEDX_stored', 'MLN_stored', 'MGO_stored', 'MC_stored', 'MYC_stored', 'NAS_stored', 'NEU_stored', 'NEXO_stored', 'NOAH_stored', 'nCash_stored', 'NULS_stored', 'NMR_stored', 'OCEAN_stored', 'OCN_stored', 'ODE_stored', 'OMG_stored', 'RNT_stored', 'OSA_stored', 'PRL_stored', 'PAX_stored', 'PLR_stored', 'PNK_stored', 'PITCH_stored', 'POE_stored', 'POLY_stored', 'PETH_stored', 'PPT_stored', 'POWR_stored', 'PRO_stored', 'PMA_stored', 'NPXS_stored', 'QASH_stored', 'QRL_stored', 'QNT_stored', 'QSP_stored', 'QKC_stored', 'QBIT_stored', 'RDN_stored', 'REN_stored', 'REQ_stored', 'RSR_stored', 'R_stored', 'RHOC_stored', 'RUFF_stored', 'SKB_stored', 'SALT_stored', 'SAN_stored', 'OST_stored', 'AGI_stored', 'SRN_stored', 'SPANK_stored', 'SXDT_stored', 'STACS_stored', 'EURS_stored', 'SNT_stored', 'STRX_stored', 'STORJ_stored', 'STORM_stored', 'SUB_stored', 'SWM_stored', 'ESH_stored', 'ESH_stored', 'SDEX_stored', 'TEL_stored', 'PAY_stored', 'EURT_stored', 'USDT_stored', 'THETA_stored', 'TCT_stored', 'TEN_stored', 'TOMO_stored', 'TUSD_stored', 'TUSD_stored', 'UTT_stored', 'USDC_stored', 'UTK_stored', 'UTNP_stored', 'VEN_stored', 'VERI_stored', 'VRS_stored', 'VETH_stored', 'WTC_stored', 'WAX_stored', 'WIC_stored', 'WSKR_stored', 'WBTC_stored', 'XYO_stored', 'ZIL_stored', 'ZOM_stored', 'LRCv2_stored', 'txs', 'avg_tx_time', 'volume_eth', 'volume_GNO', 'volume_OWL', 'volume_DAI', 'volume_MGN', 'volume_WETH', 'volume_0xBTC', 'volume_ZRX', 'volume_ADX', 'volume_ADT', 'volume_AE', 'volume_AION', 'volume_AST', 'volume_ALIS', 'volume_AMB', 'volume_ANT', 'volume_APIS', 'volume_REP', 'volume_AOA', 'volume_BNT', 'volume_BAT', 'volume_BAX', 'volume_BCAP', 'volume_BZNT', 'volume_BHPC', 'volume_BSOV', 'volume_BCT', 'volume_BQX', 'volume_BIX', 'volume_BKN', 'volume_VEE', 'volume_BLZ', 'volume_BNB', 'volume_BOOTY', 'volume_BNTY', 'volume_BRD', 'volume_BRZC', 'volume_BCZERO', 'volume_BTM', 'volume_CAN', 'volume_CENNZ', 'volume_CHX', 'volume_CND', 'volume_CLC', 'volume_cZRX', 'volume_cREP', 'volume_cBAT', 'volume_cDAI', 'volume_cETH', 'volume_cUSDC', 'volume_cWBTC', 'volume_CTXC', 'volume_CS', 'volume_CREDO', 'volume_CRO', 'volume_CPT', 'volume_C20', 'volume_AUTO', 'volume_CVC', 'volume_CMT', 'volume_GEN', 'volume_DPP', 'volume_DATA', 'volume_XD', 'volume_DAY', 'volume_MANA', 'volume_DENT', 'volume_DCN', 'volume_DESH', 'volume_DGTX', 'volume_DGD', 'volume_DNT', 'volume_DMT', 'volume_DRGN', 'volume_EDG', 'volume_LEND', 'volume_EDO', 'volume_ELF', 'volume_EDR', 'volume_ENG', 'volume_ENJ', 'volume_ERC20', 'volume_XET', 'volume_ETHS', 'volume_NEC', 'volume_ETHPLO', 'volume_FOAM', 'volume_FUN', 'volume_FSN', 'volume_GUSD', 'volume_GNX', 'volume_GVT', 'volume_GTO', 'volume_GIM', 'volume_GNT', 'volume_GRID', 'volume_GSE', 'volume_HOT', 'volume_HPB', 'volume_HT', 'volume_HYPE', 'volume_ICN', 'volume_ICX', 'volume_IDEX', 'volume_RLC', 'volume_INS', 'volume_INB', 'volume_IOST', 'volume_IOTX', 'volume_JNT', 'volume_KIN', 'volume_KNC', 'volume_LINK (Chainlink)', 'volume_LKY', 'volume_LPT', 'volume_LOOM', 'volume_LRC', 'volume_LRC', 'volume_MFT', 'volume_MKR', 'volume_MAN', 'volume_MXM', 'volume_MCO', 'volume_MDA', 'volume_MEDX', 'volume_MLN', 'volume_MGO', 'volume_MC', 'volume_MYC', 'volume_NAS', 'volume_NEU', 'volume_NEXO', 'volume_NOAH', 'volume_nCash', 'volume_NULS', 'volume_NMR', 'volume_OCEAN', 'volume_OCN', 'volume_ODE', 'volume_OMG', 'volume_RNT', 'volume_OSA', 'volume_PRL', 'volume_PAX', 'volume_PLR', 'volume_PNK', 'volume_PITCH', 'volume_POE', 'volume_POLY', 'volume_PETH', 'volume_PPT', 'volume_POWR', 'volume_PRO', 'volume_PMA', 'volume_NPXS', 'volume_QASH', 'volume_QRL', 'volume_QNT', 'volume_QSP', 'volume_QKC', 'volume_QBIT', 'volume_RDN', 'volume_REN', 'volume_REQ', 'volume_RSR', 'volume_R', 'volume_RHOC', 'volume_RUFF', 'volume_SKB', 'volume_SALT', 'volume_SAN', 'volume_OST', 'volume_AGI', 'volume_SRN', 'volume_SPANK', 'volume_SXDT', 'volume_STACS', 'volume_EURS', 'volume_SNT', 'volume_STRX', 'volume_STORJ', 'volume_STORM', 'volume_SUB', 'volume_SWM', 'volume_ESH', 'volume_ESH', 'volume_SDEX', 'volume_TEL', 'volume_PAY', 'volume_EURT', 'volume_USDT', 'volume_THETA', 'volume_TCT', 'volume_TEN', 'volume_TOMO', 'volume_TUSD', 'volume_TUSD', 'volume_UTT', 'volume_USDC', 'volume_UTK', 'volume_UTNP', 'volume_VEN', 'volume_VERI', 'volume_VRS', 'volume_VETH', 'volume_WTC', 'volume_WAX', 'volume_WIC', 'volume_WSKR', 'volume_WBTC', 'volume_XYO', 'volume_ZIL', 'volume_ZOM', 'volume_LRCv2', 'payment_eth_txs', 'payment_OWL_txs', 'payment_DAI_txs', 'payment_WETH_txs', 'payment_KNC_txs', 'payment_MKR_txs', 'payment_RDN_txs']
+    known_columns = ['date', 'safes_created', 'avg_safe_creation_time', 'payment_eth_creation', 'payment_OWL_creation', 'payment_DAI_creation', 'payment_WETH_creation', 'payment_KNC_creation', 'payment_RDN_creation', 'eth_stored', 'GNO_stored', 'OWL_stored', 'DAI_stored', 'MGN_stored', 'WETH_stored', '0xBTC_stored', 'ZRX_stored', 'ADX_stored', 'ADT_stored', 'AE_stored', 'AION_stored', 'AST_stored', 'ALIS_stored', 'AMB_stored', 'ANT_stored', 'APIS_stored', 'REP_stored', 'AOA_stored', 'BNT_stored', 'BAT_stored', 'BAX_stored', 'BCAP_stored', 'BZNT_stored', 'BHPC_stored', 'BSOV_stored', 'BCT_stored', 'BQX_stored', 'BIX_stored', 'BKN_stored', 'VEE_stored', 'BLZ_stored', 'BNB_stored', 'BOOTY_stored', 'BNTY_stored', 'BRD_stored', 'BRZC_stored', 'BCZERO_stored', 'BTM_stored', 'CAN_stored', 'CENNZ_stored', 'CHX_stored', 'CND_stored', 'CLC_stored', 'cZRX_stored', 'cREP_stored', 'cBAT_stored', 'cDAI_stored', 'cETH_stored', 'cUSDC_stored', 'cWBTC_stored', 'CTXC_stored', 'CS_stored', 'CREDO_stored', 'CRO_stored', 'CPT_stored', 'C20_stored', 'AUTO_stored', 'CVC_stored', 'CMT_stored', 'GEN_stored', 'DPP_stored', 'DATA_stored', 'XD_stored', 'DAY_stored', 'MANA_stored', 'DENT_stored', 'DCN_stored', 'DESH_stored', 'DGTX_stored', 'DGD_stored', 'DNT_stored', 'DMT_stored', 'DRGN_stored', 'EDG_stored', 'LEND_stored', 'EDO_stored', 'ELF_stored', 'EDR_stored', 'ENG_stored', 'ENJ_stored', 'ERC20_stored', 'XET_stored', 'ETHS_stored', 'NEC_stored', 'ETHPLO_stored', 'FOAM_stored', 'FRECNX_stored', 'FUN_stored', 'FSN_stored', 'GUSD_stored', 'GNX_stored', 'GVT_stored', 'GTO_stored', 'GIM_stored', 'GNT_stored', 'GRID_stored', 'GSE_stored', 'HOT_stored', 'HPB_stored', 'HT_stored', 'HYPE_stored', 'ICN_stored', 'ICX_stored', 'IDEX_stored', 'RLC_stored', 'INS_stored', 'INB_stored', 'IOST_stored', 'IOTX_stored', 'JNT_stored', 'KIN_stored', 'KNC_stored', 'LINK (Chainlink)_stored', 'LKY_stored', 'LPT_stored', 'LOOM_stored', 'LRC_stored', 'LRC_stored', 'MHLK_stored', 'MFT_stored', 'MKR_stored', 'MAN_stored', 'MXM_stored', 'MCO_stored', 'MDA_stored', 'MEDX_stored', 'MLN_stored', 'MGO_stored', 'MC_stored', 'MYC_stored', 'NAS_stored', 'NEU_stored', 'NEXO_stored', 'NOAH_stored', 'nCash_stored', 'NULS_stored', 'NMR_stored', 'OCEAN_stored', 'OCN_stored', 'ODE_stored', 'OMG_stored', 'RNT_stored', 'OSA_stored', 'PRL_stored', 'PAX_stored', 'PLR_stored', 'PNK_stored', 'PITCH_stored', 'POE_stored', 'POLY_stored', 'PETH_stored', 'PPT_stored', 'POWR_stored', 'PRO_stored', 'PMA_stored', 'NPXS_stored', 'QASH_stored', 'QRL_stored', 'QNT_stored', 'QSP_stored', 'QKC_stored', 'QBIT_stored', 'RDN_stored', 'REN_stored', 'REQ_stored', 'RSR_stored', 'R_stored', 'RHOC_stored', 'RUFF_stored', 'SKB_stored', 'SALT_stored', 'SAN_stored', 'OST_stored', 'SNG_stored', 'AGI_stored', 'SRN_stored', 'SPANK_stored', 'SXDT_stored', 'STACS_stored', 'EURS_stored', 'SNT_stored', 'STRX_stored', 'STORJ_stored', 'STORM_stored', 'SUB_stored', 'SWM_stored', 'ESH_stored', 'ESH_stored', 'SDEX_stored', 'SNX_stored', 'iBNB_stored', 'iBTC_stored', 'iETH_stored', 'iMKR_stored', 'iTRX_stored', 'iXTZ_stored', 'sAUD_stored', 'sBNB_stored', 'sBTC_stored', 'sCAD_stored', 'sCHF_stored', 'sETH_stored', 'sEUR_stored', 'sGBP_stored', 'sJPY_stored', 'sKRW_stored', 'sMKR_stored', 'sTRX_stored', 'sUSD_stored', 'sXAG_stored', 'sXAU_stored', 'sXTZ_stored', 'TEL_stored', 'PAY_stored', 'EURT_stored', 'USDT_stored', 'THETA_stored', 'TCT_stored', 'TEN_stored', 'TOMO_stored', 'TUSD_stored', 'TUSD_stored', 'UTT_stored', 'USDC_stored', 'UTK_stored', 'UTNP_stored', 'VEN_stored', 'VERI_stored', 'VRS_stored', 'VETH_stored', 'WTC_stored', 'WAX_stored', 'WIC_stored', 'WSKR_stored', 'WBTC_stored', 'XYO_stored', 'ZIL_stored', 'ZOM_stored', 'LRCv2_stored', 'txs', 'avg_tx_time', 'volume_eth', 'volume_GNO', 'volume_OWL', 'volume_DAI', 'volume_MGN', 'volume_WETH', 'volume_0xBTC', 'volume_ZRX', 'volume_ADX', 'volume_ADT', 'volume_AE', 'volume_AION', 'volume_AST', 'volume_ALIS', 'volume_AMB', 'volume_ANT', 'volume_APIS', 'volume_REP', 'volume_AOA', 'volume_BNT', 'volume_BAT', 'volume_BAX', 'volume_BCAP', 'volume_BZNT', 'volume_BHPC', 'volume_BSOV', 'volume_BCT', 'volume_BQX', 'volume_BIX', 'volume_BKN', 'volume_VEE', 'volume_BLZ', 'volume_BNB', 'volume_BOOTY', 'volume_BNTY', 'volume_BRD', 'volume_BRZC', 'volume_BCZERO', 'volume_BTM', 'volume_CAN', 'volume_CENNZ', 'volume_CHX', 'volume_CND', 'volume_CLC', 'volume_cZRX', 'volume_cREP', 'volume_cBAT', 'volume_cDAI', 'volume_cETH', 'volume_cUSDC', 'volume_cWBTC', 'volume_CTXC', 'volume_CS', 'volume_CREDO', 'volume_CRO', 'volume_CPT', 'volume_C20', 'volume_AUTO', 'volume_CVC', 'volume_CMT', 'volume_GEN', 'volume_DPP', 'volume_DATA', 'volume_XD', 'volume_DAY', 'volume_MANA', 'volume_DENT', 'volume_DCN', 'volume_DESH', 'volume_DGTX', 'volume_DGD', 'volume_DNT', 'volume_DMT', 'volume_DRGN', 'volume_EDG', 'volume_LEND', 'volume_EDO', 'volume_ELF', 'volume_EDR', 'volume_ENG', 'volume_ENJ', 'volume_ERC20', 'volume_XET', 'volume_ETHS', 'volume_NEC', 'volume_ETHPLO', 'volume_FOAM', 'volume_FRECNX', 'volume_FUN', 'volume_FSN', 'volume_GUSD', 'volume_GNX', 'volume_GVT', 'volume_GTO', 'volume_GIM', 'volume_GNT', 'volume_GRID', 'volume_GSE', 'volume_HOT', 'volume_HPB', 'volume_HT', 'volume_HYPE', 'volume_ICN', 'volume_ICX', 'volume_IDEX', 'volume_RLC', 'volume_INS', 'volume_INB', 'volume_IOST', 'volume_IOTX', 'volume_JNT', 'volume_KIN', 'volume_KNC', 'volume_LINK (Chainlink)', 'volume_LKY', 'volume_LPT', 'volume_LOOM', 'volume_LRC', 'volume_LRC', 'volume_MHLK', 'volume_MFT', 'volume_MKR', 'volume_MAN', 'volume_MXM', 'volume_MCO', 'volume_MDA', 'volume_MEDX', 'volume_MLN', 'volume_MGO', 'volume_MC', 'volume_MYC', 'volume_NAS', 'volume_NEU', 'volume_NEXO', 'volume_NOAH', 'volume_nCash', 'volume_NULS', 'volume_NMR', 'volume_OCEAN', 'volume_OCN', 'volume_ODE', 'volume_OMG', 'volume_RNT', 'volume_OSA', 'volume_PRL', 'volume_PAX', 'volume_PLR', 'volume_PNK', 'volume_PITCH', 'volume_POE', 'volume_POLY', 'volume_PETH', 'volume_PPT', 'volume_POWR', 'volume_PRO', 'volume_PMA', 'volume_NPXS', 'volume_QASH', 'volume_QRL', 'volume_QNT', 'volume_QSP', 'volume_QKC', 'volume_QBIT', 'volume_RDN', 'volume_REN', 'volume_REQ', 'volume_RSR', 'volume_R', 'volume_RHOC', 'volume_RUFF', 'volume_SKB', 'volume_SALT', 'volume_SAN', 'volume_OST', 'volume_SNG', 'volume_AGI', 'volume_SRN', 'volume_SPANK', 'volume_SXDT', 'volume_STACS', 'volume_EURS', 'volume_SNT', 'volume_STRX', 'volume_STORJ', 'volume_STORM', 'volume_SUB', 'volume_SWM', 'volume_ESH', 'volume_ESH', 'volume_SDEX', 'volume_SNX', 'volume_iBNB', 'volume_iBTC', 'volume_iETH', 'volume_iMKR', 'volume_iTRX', 'volume_iXTZ', 'volume_sAUD', 'volume_sBNB', 'volume_sBTC', 'volume_sCAD', 'volume_sCHF', 'volume_sETH', 'volume_sEUR', 'volume_sGBP', 'volume_sJPY', 'volume_sKRW', 'volume_sMKR', 'volume_sTRX', 'volume_sUSD', 'volume_sXAG', 'volume_sXAU', 'volume_sXTZ', 'volume_TEL', 'volume_PAY', 'volume_EURT', 'volume_USDT', 'volume_THETA', 'volume_TCT', 'volume_TEN', 'volume_TOMO', 'volume_TUSD', 'volume_TUSD', 'volume_UTT', 'volume_USDC', 'volume_UTK', 'volume_UTNP', 'volume_VEN', 'volume_VERI', 'volume_VRS', 'volume_VETH', 'volume_WTC', 'volume_WAX', 'volume_WIC', 'volume_WSKR', 'volume_WBTC', 'volume_XYO', 'volume_ZIL', 'volume_ZOM', 'volume_LRCv2', 'payment_eth_txs', 'payment_OWL_txs', 'payment_DAI_txs', 'payment_WETH_txs', 'payment_KNC_txs', 'payment_RDN_txs']
 
     unknown_columns = []
     for column in columns:
@@ -290,7 +326,7 @@ def main():
         print("Columns changed!")
         print("New columns: {}".format(unknown_columns))
         import pdb; pdb.set_trace()
-    
+
     stats_file = open(STATS_FILENAME, 'w')
     stats_file.write(','.join(columns))
     stats_file.write('\n')
@@ -299,7 +335,7 @@ def main():
         stats_file.write(','.join([str(d) for d in data]))
         stats_file.write('\n')
         stats_file.flush()
-        
+
     stats_file.close()
 
 if __name__ == '__main__':
